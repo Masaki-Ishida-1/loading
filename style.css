@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  background-color: #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader {
+  width: 400px;
+  height: 400px;
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.loader span {
+  position: absolute;
+  border: 2px solid #143570;
+  width: 100%;
+  height: 100%;
+  animation: animate 5s linear infinite;
+}
+
+.loader span:nth-child(1){
+  border-radius: 17% 83% 25% 75% / 85% 14% 86% 15% ;
+}
+
+.loader span:nth-child(2){
+  animation-direction: reverse;
+  border-radius: 46% 54% 25% 75% / 60% 44% 56% 40% ;
+}
+
+.loader span:nth-child(3) {
+  animation-delay: 3s;
+  border-radius: 68% 32% 75% 25% / 41% 51% 49% 59%  ;
+}
+
+.content {
+  position: absolute;
+  color: white;
+  font-size: 1.2rem;
+  visibility: hidden;
+  transition: all 0.3s;
+  transition-delay: 0.3s;
+}
+
+.loaded {
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader h2 {
+  color: white;
+  font-size: 2.3rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: 700;
+}
